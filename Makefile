@@ -14,11 +14,6 @@ prepare:
 	   -maxyangle 1.1 maxzangle 0.5 -maxidev 40 -w 60 -h 40"
 	python3 ./tools/mergevec.py -v samples/ -o samples.vec
 
-haar:  prepare
-	@echo "Generating HAAR cascade"
-	mkdir -p classifier_haar
-	opencv_traincascade -data classifier_haar $(OPTIONS)
-
 lpb: prepare
 	@echo "Generating LPB cascade"
 	mkdir -p classifier_lpb
